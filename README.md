@@ -487,7 +487,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📞 Contact
 
 - **Created by:** Ajlan Sulaiman Alajlan
-- **GitHub:** [@Alien70](https://github.com/YOUR_USERNAME)
+- **GitHub:** [@AjlanAlajlan70](https://github.com/AjlanAlajlan70
+)
 
 ---
 
