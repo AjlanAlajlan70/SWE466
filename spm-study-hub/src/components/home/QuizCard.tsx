@@ -249,10 +249,15 @@ export function QuizCard({ chapter, progress, index }: QuizCardProps) {
               </div>
             </motion.div>
           ) : (
-            <div className="mt-4 rounded-xl bg-muted/50 dark:bg-slate-700/30 px-4 py-3">
-              <span className="text-sm text-muted-foreground">
-                Complete slides first
-              </span>
+            <div className="mt-4 rounded-xl bg-gradient-to-r from-slate-100 to-slate-200 dark:from-slate-700/50 dark:to-slate-600/50 border border-slate-200 dark:border-slate-600 px-4 py-3">
+              <div className="flex items-center justify-between">
+                <span className="text-sm font-medium text-slate-600 dark:text-slate-300">
+                  Complete slides first
+                </span>
+                <div className="flex h-5 w-5 items-center justify-center rounded-full bg-slate-300 dark:bg-slate-500">
+                  <Clock className="h-3 w-3 text-slate-600 dark:text-slate-200" />
+                </div>
+              </div>
             </div>
           )}
 

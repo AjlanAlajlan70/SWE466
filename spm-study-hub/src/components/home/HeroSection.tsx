@@ -158,10 +158,10 @@ export function HeroSection() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
-                className="group relative rounded-2xl border border-white/30 bg-white/60 px-8 py-4 text-lg font-semibold text-foreground shadow-lg backdrop-blur-xl transition-all duration-300 hover:bg-white/80 hover:border-coral-200"
+                className="group relative rounded-2xl border border-teal-200 dark:border-teal-500/50 bg-white/90 dark:bg-slate-800/90 px-8 py-4 text-lg font-semibold text-foreground shadow-lg backdrop-blur-xl transition-all duration-300 hover:bg-teal-50 dark:hover:bg-teal-900/30 hover:border-teal-300 dark:hover:border-teal-400"
               >
                 <span className="flex items-center gap-2">
-                  <Brain className="h-5 w-5 text-teal-600" />
+                  <Brain className="h-5 w-5 text-teal-600 dark:text-teal-400" />
                   Take a Quiz
                 </span>
               </motion.button>

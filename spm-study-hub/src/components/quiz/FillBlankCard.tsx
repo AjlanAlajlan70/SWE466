@@ -88,6 +88,7 @@ export function FillBlankCard({
               onChange={(e) => setAnswer(e.target.value)}
               disabled={disabled}
               placeholder="Type your answer..."
+              maxLength={200}
               className={cn(
                 'w-full rounded-lg border border-border bg-background px-4 py-3',
                 'text-foreground placeholder:text-muted-foreground',
