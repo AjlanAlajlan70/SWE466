@@ -59,8 +59,8 @@ export function TimelineSlide({ slide, visibleSteps }: TimelineSlideProps) {
                   <div
                     className={`inline-flex items-center rounded-full px-3 py-1 text-sm font-medium ${
                       index % 2 === 0
-                        ? 'bg-coral-100 text-coral-700'
-                        : 'bg-teal-100 text-teal-700'
+                        ? 'bg-coral-100 text-coral-700 dark:bg-coral-900/30 dark:text-coral-400'
+                        : 'bg-teal-100 text-teal-700 dark:bg-teal-900/30 dark:text-teal-400'
                     }`}
                   >
                     {event.year}

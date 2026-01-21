@@ -1,7 +1,7 @@
 'use client';
 
-import { useState, useCallback, useRef } from 'react';
-import { Home, ClipboardList, BookOpen } from 'lucide-react';
+import { useState, useCallback, useRef, useEffect } from 'react';
+import { Home, ClipboardList, BookOpen, Moon, Sun } from 'lucide-react';
 import { Chapter } from '@/data/chapters/types';
 import { SlideContainer } from '@/components/slides/SlideContainer';
 import { AIAssistant } from '@/components/ai/AIAssistant';
@@ -14,7 +14,23 @@ interface ChapterPageClientProps {
 export function ChapterPageClient({ chapter }: ChapterPageClientProps) {
   const [aiMessage, setAiMessage] = useState<string | null>(null);
   const [isAIOpen, setIsAIOpen] = useState(false);
+  const [isDark, setIsDark] = useState(false);
   const aiRef = useRef<{ sendMessage: (msg: string) => void; openChat: () => void } | null>(null);
+
+  useEffect(() => {
+    setIsDark(document.documentElement.classList.contains('dark'));
+  }, []);
+
+  const toggleDarkMode = () => {
+    setIsDark(!isDark);
+    if (isDark) {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+    } else {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    }
+  };
 
   const handleAskAI = useCallback((text: string) => {
     if (aiRef.current) {
@@ -55,6 +71,15 @@ export function ChapterPageClient({ chapter }: ChapterPageClientProps) {
             Take a Quiz
           </span>
         </a>
+        <button
+          onClick={toggleDarkMode}
+          className="group relative flex h-10 w-10 items-center justify-center rounded-full bg-card/90 text-muted-foreground shadow-lg backdrop-blur-sm transition-all hover:bg-card hover:text-foreground hover:scale-105"
+        >
+          {isDark ? <Sun className="h-5 w-5 text-amber-500" /> : <Moon className="h-5 w-5 text-violet-500" />}
+          <span className="pointer-events-none absolute left-1/2 top-full mt-2 -translate-x-1/2 rounded-md bg-foreground px-2 py-1 text-xs font-medium text-background opacity-0 shadow-lg transition-opacity group-hover:opacity-100 whitespace-nowrap">
+            {isDark ? 'Light Mode' : 'Dark Mode'}
+          </span>
+        </button>
       </div>
 
       {/* Slides */}

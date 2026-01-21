@@ -50,8 +50,8 @@ export function FillBlankCard({
             className={cn(
               'inline-block min-w-[120px] mx-1 border-b-2 px-2 py-1',
               !showResult && 'border-coral-400',
-              showResult && isCorrect && 'border-green-500 bg-green-100 text-green-800',
-              showResult && !isCorrect && 'border-red-500 bg-red-100 text-red-800'
+              showResult && isCorrect && 'border-green-500 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300',
+              showResult && !isCorrect && 'border-red-500 bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-300'
             )}
           >
             {showResult ? (
@@ -112,8 +112,8 @@ export function FillBlankCard({
 
       {/* Show correct answer if wrong */}
       {showResult && !isCorrect && (
-        <div className="rounded-lg bg-amber-50 border border-amber-200 p-4">
-          <p className="text-sm text-amber-800">
+        <div className="rounded-lg bg-amber-50 dark:bg-amber-900/30 border border-amber-200 dark:border-amber-800 p-4">
+          <p className="text-sm text-amber-800 dark:text-amber-300">
             <strong>Correct answer:</strong> {question.acceptableAnswers[0]}
           </p>
         </div>

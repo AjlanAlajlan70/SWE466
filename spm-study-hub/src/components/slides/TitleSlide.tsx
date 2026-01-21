@@ -19,7 +19,7 @@ export function TitleSlide({ slide }: TitleSlideProps) {
       {/* Chapter Number Badge */}
       <motion.div
         variants={fadeIn}
-        className="mb-6 inline-flex items-center rounded-full bg-coral-100 px-4 py-1.5 text-sm font-medium text-coral-700"
+        className="mb-6 inline-flex items-center rounded-full bg-coral-100 dark:bg-coral-900/40 px-4 py-1.5 text-sm font-medium text-coral-700 dark:text-coral-400"
       >
         Chapter {slide.chapterNumber}
       </motion.div>

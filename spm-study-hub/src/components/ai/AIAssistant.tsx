@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect, FormEvent, createContext, useContext } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MessageCircle, Send, Bot, User, Loader2, Sparkles, PanelRightClose, Trash2 } from 'lucide-react';
+import { MessageCircle, Send, Bot, User, Loader2, Sparkles, X, Trash2 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { askAI } from '@/lib/groq';
 
@@ -391,23 +391,19 @@ export function AIAssistant({
 
   return (
     <AIContext.Provider value={contextValue}>
-      {/* Toggle Button */}
-      <motion.button
-        onClick={() => handleSetIsOpen(!isOpen)}
-        className={cn(
-          'fixed z-50 transition-all duration-300',
-          isOpen
-            ? 'top-4 right-[420px] rounded-lg bg-card border border-border p-2 shadow-lg hover:bg-muted'
-            : 'bottom-6 right-6 flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-coral-500 to-teal-500 shadow-lg text-white hover:scale-105'
-        )}
-        whileTap={{ scale: 0.95 }}
-      >
-        {isOpen ? (
-          <PanelRightClose className="h-5 w-5 text-muted-foreground" />
-        ) : (
+      {/* Toggle Button - Only show when closed */}
+      {!isOpen && (
+        <motion.button
+          onClick={() => handleSetIsOpen(true)}
+          className={cn(
+            'fixed z-50 transition-all duration-300',
+            'bottom-24 right-6 md:bottom-6 flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-coral-500 to-teal-500 shadow-lg text-white hover:scale-105'
+          )}
+          whileTap={{ scale: 0.95 }}
+        >
           <MessageCircle className="h-6 w-6" />
-        )}
-      </motion.button>
+        </motion.button>
+      )}
 
       {/* Sidebar */}
       <AnimatePresence>
@@ -419,7 +415,7 @@ export function AIAssistant({
             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
             data-ai-sidebar
             className={cn(
-              'fixed right-0 top-0 z-[60] h-full w-[400px]',
+              'fixed right-0 top-0 z-[60] h-full w-full sm:w-[400px]',
               'flex flex-col border-l border-border bg-card shadow-2xl'
             )}
           >
@@ -435,16 +431,25 @@ export function AIAssistant({
                     <p className="text-xs text-white/80">Powered by AI</p>
                   </div>
                 </div>
-                {/* Clear Chat Button */}
-                {messages.length > 0 && (
+                <div className="flex items-center gap-2">
+                  {/* Clear Chat Button */}
+                  {messages.length > 0 && (
+                    <button
+                      onClick={clearChat}
+                      className="flex items-center gap-1.5 rounded-lg bg-white/20 px-3 py-1.5 text-xs font-medium text-white transition-colors hover:bg-white/30"
+                    >
+                      <Trash2 className="h-3.5 w-3.5" />
+                      Clear
+                    </button>
+                  )}
+                  {/* Close Button */}
                   <button
-                    onClick={clearChat}
-                    className="flex items-center gap-1.5 rounded-lg bg-white/20 px-3 py-1.5 text-xs font-medium text-white transition-colors hover:bg-white/30"
+                    onClick={() => handleSetIsOpen(false)}
+                    className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/20 text-white transition-colors hover:bg-white/30"
                   >
-                    <Trash2 className="h-3.5 w-3.5" />
-                    Clear
+                    <X className="h-5 w-5" />
                   </button>
-                )}
+                </div>
               </div>
             </div>
 

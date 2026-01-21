@@ -144,12 +144,12 @@ export function SlideMiniNavigator({ slides, currentSlideIndex, onGoToSlide }: S
                     {/* Section Header */}
                     <div className={cn(
                       'flex items-center gap-2 rounded-lg px-2 py-1.5',
-                      currentSectionIndex === sectionIdx && 'bg-teal-50'
+                      currentSectionIndex === sectionIdx && 'bg-teal-50 dark:bg-teal-900/30'
                     )}>
                       <div className="h-2 w-2 rounded-full bg-teal-500" />
                       <span className={cn(
                         'text-xs font-medium',
-                        currentSectionIndex === sectionIdx ? 'text-teal-700' : 'text-muted-foreground'
+                        currentSectionIndex === sectionIdx ? 'text-teal-700 dark:text-teal-400' : 'text-muted-foreground'
                       )}>
                         {section.sectionTitle}
                       </span>
@@ -172,7 +172,7 @@ export function SlideMiniNavigator({ slides, currentSlideIndex, onGoToSlide }: S
                             className={cn(
                               'flex w-full items-center gap-2 rounded-lg px-2 py-1.5 text-left transition-colors',
                               isCurrent
-                                ? 'bg-gradient-to-r from-coral-50 to-teal-50 border border-teal-200'
+                                ? 'bg-gradient-to-r from-coral-50 to-teal-50 dark:from-coral-900/30 dark:to-teal-900/30 border border-teal-200 dark:border-teal-800'
                                 : 'hover:bg-muted'
                             )}
                           >

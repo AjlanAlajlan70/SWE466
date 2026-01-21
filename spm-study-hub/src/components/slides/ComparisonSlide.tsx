@@ -33,16 +33,16 @@ export function ComparisonSlide({ slide, visibleSteps }: ComparisonSlideProps) {
             variants={stepVariants}
             initial="hidden"
             animate="visible"
-            className="rounded-xl border border-coral-200 bg-gradient-to-br from-coral-50 to-orange-50 p-6"
+            className="rounded-xl border border-coral-200 dark:border-coral-800/50 bg-gradient-to-br from-coral-50 to-orange-50 dark:from-coral-900/30 dark:to-orange-900/30 p-6"
           >
-            <h3 className="mb-4 text-lg font-semibold text-coral-800">
+            <h3 className="mb-4 text-lg font-semibold text-coral-800 dark:text-coral-300">
               {slide.leftColumn.title}
             </h3>
             <ul className="space-y-3">
               {slide.leftColumn.items.map((item, index) => (
                 <li key={index} className="flex items-start gap-3">
                   <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-coral-500" />
-                  <span className="text-coral-700">{item}</span>
+                  <span className="text-coral-700 dark:text-coral-400">{item}</span>
                 </li>
               ))}
             </ul>
@@ -55,16 +55,16 @@ export function ComparisonSlide({ slide, visibleSteps }: ComparisonSlideProps) {
             variants={stepVariants}
             initial="hidden"
             animate="visible"
-            className="rounded-xl border border-teal-200 bg-gradient-to-br from-teal-50 to-emerald-50 p-6"
+            className="rounded-xl border border-teal-200 dark:border-teal-800/50 bg-gradient-to-br from-teal-50 to-emerald-50 dark:from-teal-900/30 dark:to-emerald-900/30 p-6"
           >
-            <h3 className="mb-4 text-lg font-semibold text-teal-800">
+            <h3 className="mb-4 text-lg font-semibold text-teal-800 dark:text-teal-300">
               {slide.rightColumn.title}
             </h3>
             <ul className="space-y-3">
               {slide.rightColumn.items.map((item, index) => (
                 <li key={index} className="flex items-start gap-3">
                   <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-teal-500" />
-                  <span className="text-teal-700">{item}</span>
+                  <span className="text-teal-700 dark:text-teal-400">{item}</span>
                 </li>
               ))}
             </ul>

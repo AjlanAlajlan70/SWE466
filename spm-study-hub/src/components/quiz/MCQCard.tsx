@@ -66,10 +66,10 @@ export function MCQCard({
                 'w-full rounded-xl border p-4 text-left transition-all',
                 'flex items-start gap-3',
                 'focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2',
-                !showCorrectness && !isSelected && 'border-border hover:border-coral-300 hover:bg-coral-50/50',
-                !showCorrectness && isSelected && 'border-coral-500 bg-coral-50',
-                showCorrectness && isCorrectOption && 'border-green-500 bg-green-50',
-                showCorrectness && isSelected && !isCorrectOption && 'border-red-500 bg-red-50',
+                !showCorrectness && !isSelected && 'border-border hover:border-coral-300 hover:bg-coral-50/50 dark:hover:bg-coral-900/20',
+                !showCorrectness && isSelected && 'border-coral-500 bg-coral-50 dark:bg-coral-900/20',
+                showCorrectness && isCorrectOption && 'border-green-500 bg-green-50 dark:bg-green-900/20',
+                showCorrectness && isSelected && !isCorrectOption && 'border-red-500 bg-red-50 dark:bg-red-900/20',
                 showCorrectness && !isCorrectOption && !isSelected && 'border-border opacity-50'
               )}
             >
@@ -96,8 +96,8 @@ export function MCQCard({
               {/* Option Text */}
               <span className={cn(
                 'pt-1',
-                showCorrectness && isCorrectOption && 'text-green-800',
-                showCorrectness && isSelected && !isCorrectOption && 'text-red-800',
+                showCorrectness && isCorrectOption && 'text-green-800 dark:text-green-300',
+                showCorrectness && isSelected && !isCorrectOption && 'text-red-800 dark:text-red-300',
                 !showCorrectness && 'text-foreground'
               )}>
                 {option}

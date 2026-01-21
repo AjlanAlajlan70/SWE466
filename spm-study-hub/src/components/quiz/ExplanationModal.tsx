@@ -25,8 +25,8 @@ export function ExplanationModal({
       className={cn(
         'mt-6 rounded-xl border p-6',
         isCorrect
-          ? 'border-green-200 bg-green-50'
-          : 'border-red-200 bg-red-50'
+          ? 'border-green-200 dark:border-green-800 bg-green-50 dark:bg-green-900/20'
+          : 'border-red-200 dark:border-red-800 bg-red-50 dark:bg-red-900/20'
       )}
     >
       {/* Result Header */}
@@ -34,14 +34,14 @@ export function ExplanationModal({
         {isCorrect ? (
           <>
             <CheckCircle2 className="h-6 w-6 text-green-600" />
-            <span className="text-lg font-semibold text-green-800">
+            <span className="text-lg font-semibold text-green-800 dark:text-green-300">
               Correct!
             </span>
           </>
         ) : (
           <>
             <XCircle className="h-6 w-6 text-red-600" />
-            <span className="text-lg font-semibold text-red-800">
+            <span className="text-lg font-semibold text-red-800 dark:text-red-300">
               Incorrect
             </span>
           </>
@@ -56,7 +56,7 @@ export function ExplanationModal({
         )} />
         <p className={cn(
           'text-sm',
-          isCorrect ? 'text-green-800' : 'text-red-800'
+          isCorrect ? 'text-green-800 dark:text-green-300' : 'text-red-800 dark:text-red-300'
         )}>
           {explanation}
         </p>

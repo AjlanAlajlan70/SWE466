@@ -118,18 +118,18 @@ export function MatchingCard({
                   'w-full rounded-lg border p-3 text-left transition-all',
                   'focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2',
                   !showResult && !isSelected && !hasMatch && 'border-border hover:border-coral-300',
-                  !showResult && isSelected && 'border-coral-500 bg-coral-50 ring-2 ring-coral-500',
-                  !showResult && hasMatch && 'border-teal-500 bg-teal-50',
-                  showResult && hasMatch && matchIsCorrect && 'border-green-500 bg-green-50',
-                  showResult && hasMatch && !matchIsCorrect && 'border-red-500 bg-red-50',
+                  !showResult && isSelected && 'border-coral-500 bg-coral-50 dark:bg-coral-900/20 ring-2 ring-coral-500',
+                  !showResult && hasMatch && 'border-teal-500 bg-teal-50 dark:bg-teal-900/20',
+                  showResult && hasMatch && matchIsCorrect && 'border-green-500 bg-green-50 dark:bg-green-900/20',
+                  showResult && hasMatch && !matchIsCorrect && 'border-red-500 bg-red-50 dark:bg-red-900/20',
                   showResult && !hasMatch && 'border-border opacity-50'
                 )}
               >
                 <div className="flex items-center justify-between">
                   <span className={cn(
                     'text-sm',
-                    showResult && hasMatch && matchIsCorrect && 'text-green-800',
-                    showResult && hasMatch && !matchIsCorrect && 'text-red-800',
+                    showResult && hasMatch && matchIsCorrect && 'text-green-800 dark:text-green-300',
+                    showResult && hasMatch && !matchIsCorrect && 'text-red-800 dark:text-red-300',
                     !showResult && 'text-foreground'
                   )}>
                     {pair.left}
@@ -172,16 +172,16 @@ export function MatchingCard({
                   'focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2',
                   !showResult && !hasMatch && !selectedLeft && 'border-border',
                   !showResult && !hasMatch && selectedLeft && 'border-border hover:border-teal-300 cursor-pointer',
-                  !showResult && hasMatch && 'border-teal-500 bg-teal-50',
-                  showResult && hasMatch && matchIsCorrect && 'border-green-500 bg-green-50',
-                  showResult && hasMatch && !matchIsCorrect && 'border-red-500 bg-red-50',
+                  !showResult && hasMatch && 'border-teal-500 bg-teal-50 dark:bg-teal-900/20',
+                  showResult && hasMatch && matchIsCorrect && 'border-green-500 bg-green-50 dark:bg-green-900/20',
+                  showResult && hasMatch && !matchIsCorrect && 'border-red-500 bg-red-50 dark:bg-red-900/20',
                   showResult && !hasMatch && 'border-border opacity-50'
                 )}
               >
                 <span className={cn(
                   'text-sm',
-                  showResult && hasMatch && matchIsCorrect && 'text-green-800',
-                  showResult && hasMatch && !matchIsCorrect && 'text-red-800',
+                  showResult && hasMatch && matchIsCorrect && 'text-green-800 dark:text-green-300',
+                  showResult && hasMatch && !matchIsCorrect && 'text-red-800 dark:text-red-300',
                   !showResult && 'text-foreground'
                 )}>
                   {right}

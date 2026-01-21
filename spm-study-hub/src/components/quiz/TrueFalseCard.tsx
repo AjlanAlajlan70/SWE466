@@ -53,10 +53,10 @@ export function TrueFalseCard({
           className={cn(
             'flex items-center justify-center gap-2 rounded-xl border p-6 font-medium transition-all',
             'focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2',
-            !showResult && selected !== true && 'border-border hover:border-green-400 hover:bg-green-50',
-            !showResult && selected === true && 'border-green-500 bg-green-100',
-            showResult && question.isTrue && 'border-green-500 bg-green-100',
-            showResult && !question.isTrue && selected === true && 'border-red-500 bg-red-100',
+            !showResult && selected !== true && 'border-border hover:border-green-400 hover:bg-green-50 dark:hover:bg-green-900/20',
+            !showResult && selected === true && 'border-green-500 bg-green-100 dark:bg-green-900/30',
+            showResult && question.isTrue && 'border-green-500 bg-green-100 dark:bg-green-900/30',
+            showResult && !question.isTrue && selected === true && 'border-red-500 bg-red-100 dark:bg-red-900/30',
             showResult && !question.isTrue && selected !== true && 'border-border opacity-50'
           )}
         >
@@ -66,8 +66,8 @@ export function TrueFalseCard({
             <X className="h-5 w-5 text-red-600" />
           ) : null}
           <span className={cn(
-            showResult && question.isTrue && 'text-green-700',
-            showResult && !question.isTrue && selected === true && 'text-red-700',
+            showResult && question.isTrue && 'text-green-700 dark:text-green-400',
+            showResult && !question.isTrue && selected === true && 'text-red-700 dark:text-red-400',
             !showResult && 'text-foreground'
           )}>
             True
@@ -81,10 +81,10 @@ export function TrueFalseCard({
           className={cn(
             'flex items-center justify-center gap-2 rounded-xl border p-6 font-medium transition-all',
             'focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2',
-            !showResult && selected !== false && 'border-border hover:border-red-400 hover:bg-red-50',
-            !showResult && selected === false && 'border-red-500 bg-red-100',
-            showResult && !question.isTrue && 'border-green-500 bg-green-100',
-            showResult && question.isTrue && selected === false && 'border-red-500 bg-red-100',
+            !showResult && selected !== false && 'border-border hover:border-red-400 hover:bg-red-50 dark:hover:bg-red-900/20',
+            !showResult && selected === false && 'border-red-500 bg-red-100 dark:bg-red-900/30',
+            showResult && !question.isTrue && 'border-green-500 bg-green-100 dark:bg-green-900/30',
+            showResult && question.isTrue && selected === false && 'border-red-500 bg-red-100 dark:bg-red-900/30',
             showResult && question.isTrue && selected !== false && 'border-border opacity-50'
           )}
         >
@@ -94,8 +94,8 @@ export function TrueFalseCard({
             <X className="h-5 w-5 text-red-600" />
           ) : null}
           <span className={cn(
-            showResult && !question.isTrue && 'text-green-700',
-            showResult && question.isTrue && selected === false && 'text-red-700',
+            showResult && !question.isTrue && 'text-green-700 dark:text-green-400',
+            showResult && question.isTrue && selected === false && 'text-red-700 dark:text-red-400',
             !showResult && 'text-foreground'
           )}>
             False

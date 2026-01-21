@@ -65,7 +65,7 @@ export function SlideNavigation({
               <Button
                 variant="outline"
                 disabled
-                className="border-green-500 bg-green-50 text-green-700 hover:bg-green-50"
+                className="border-green-500 bg-green-50 dark:bg-green-900/30 text-green-700 dark:text-green-400 hover:bg-green-50 dark:hover:bg-green-900/40"
                 rightIcon={<Check className="h-4 w-4" />}
               >
                 Completed

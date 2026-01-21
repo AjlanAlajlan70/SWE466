@@ -61,7 +61,7 @@ export function QuizResults({
     return (
       <div key={question.id} className={cn(
         "p-4 rounded-lg border",
-        isCorrect ? "bg-green-50 border-green-200" : "bg-red-50 border-red-200"
+        isCorrect ? "bg-green-50 dark:bg-green-900/20 border-green-200 dark:border-green-800" : "bg-red-50 dark:bg-red-900/20 border-red-200 dark:border-red-800"
       )}>
         <div className="flex items-start gap-3">
           {isCorrect ? (
@@ -73,7 +73,7 @@ export function QuizResults({
             <p className="font-medium text-foreground mb-2">
               {index + 1}. {question.question}
               {wasNotAnswered && (
-                <span className="ml-2 text-xs bg-amber-100 text-amber-700 px-2 py-0.5 rounded">
+                <span className="ml-2 text-xs bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400 px-2 py-0.5 rounded">
                   Not Answered
                 </span>
               )}
@@ -88,8 +88,8 @@ export function QuizResults({
                     key={optIndex}
                     className={cn(
                       "flex items-center gap-2 px-2 py-1 rounded",
-                      isCorrectAnswer && "bg-green-100 text-green-800 font-medium",
-                      isUserAnswer && !isCorrectAnswer && "bg-red-100 text-red-800 line-through"
+                      isCorrectAnswer && "bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 font-medium",
+                      isUserAnswer && !isCorrectAnswer && "bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-300 line-through"
                     )}
                   >
                     <span className="font-mono">{String.fromCharCode(65 + optIndex)}.</span>
@@ -121,7 +121,7 @@ export function QuizResults({
     return (
       <div key={question.id} className={cn(
         "p-4 rounded-lg border",
-        isCorrect ? "bg-green-50 border-green-200" : "bg-red-50 border-red-200"
+        isCorrect ? "bg-green-50 dark:bg-green-900/20 border-green-200 dark:border-green-800" : "bg-red-50 dark:bg-red-900/20 border-red-200 dark:border-red-800"
       )}>
         <div className="flex items-start gap-3">
           {isCorrect ? (
@@ -133,7 +133,7 @@ export function QuizResults({
             <p className="font-medium text-foreground mb-2">
               {index + 1}. {question.statement}
               {wasNotAnswered && (
-                <span className="ml-2 text-xs bg-amber-100 text-amber-700 px-2 py-0.5 rounded">
+                <span className="ml-2 text-xs bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400 px-2 py-0.5 rounded">
                   Not Answered
                 </span>
               )}
@@ -178,7 +178,7 @@ export function QuizResults({
     return (
       <div key={question.id} className={cn(
         "p-4 rounded-lg border",
-        isCorrect ? "bg-green-50 border-green-200" : "bg-red-50 border-red-200"
+        isCorrect ? "bg-green-50 dark:bg-green-900/20 border-green-200 dark:border-green-800" : "bg-red-50 dark:bg-red-900/20 border-red-200 dark:border-red-800"
       )}>
         <div className="flex items-start gap-3">
           {isCorrect ? (
@@ -190,7 +190,7 @@ export function QuizResults({
             <p className="font-medium text-foreground mb-2">
               {index + 1}. {question.instruction}
               {wasNotAnswered && (
-                <span className="ml-2 text-xs bg-amber-100 text-amber-700 px-2 py-0.5 rounded">
+                <span className="ml-2 text-xs bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400 px-2 py-0.5 rounded">
                   Not Answered
                 </span>
               )}
@@ -211,7 +211,7 @@ export function QuizResults({
                           key={pairIndex}
                           className={cn(
                             "flex items-center gap-2 px-2 py-1 rounded text-sm",
-                            isMatchCorrect ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"
+                            isMatchCorrect ? "bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300" : "bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-300"
                           )}
                         >
                           <span>{pair.left}</span>
@@ -235,7 +235,7 @@ export function QuizResults({
                     {question.pairs.map((pair, pairIndex) => (
                       <div
                         key={pairIndex}
-                        className="flex items-center gap-2 px-2 py-1 rounded text-sm bg-green-100 text-green-800"
+                        className="flex items-center gap-2 px-2 py-1 rounded text-sm bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300"
                       >
                         <span>{pair.left}</span>
                         <span className="text-muted-foreground">→</span>
@@ -267,7 +267,7 @@ export function QuizResults({
     return (
       <div key={question.id} className={cn(
         "p-4 rounded-lg border",
-        isCorrect ? "bg-green-50 border-green-200" : "bg-red-50 border-red-200"
+        isCorrect ? "bg-green-50 dark:bg-green-900/20 border-green-200 dark:border-green-800" : "bg-red-50 dark:bg-red-900/20 border-red-200 dark:border-red-800"
       )}>
         <div className="flex items-start gap-3">
           {isCorrect ? (
@@ -279,7 +279,7 @@ export function QuizResults({
             <p className="font-medium text-foreground mb-2">
               {index + 1}. {question.question.replace('___', '_____')}
               {wasNotAnswered && (
-                <span className="ml-2 text-xs bg-amber-100 text-amber-700 px-2 py-0.5 rounded">
+                <span className="ml-2 text-xs bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400 px-2 py-0.5 rounded">
                   Not Answered
                 </span>
               )}
@@ -327,7 +327,7 @@ export function QuizResults({
         <div
           className={cn(
             'mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full',
-            passed ? 'bg-green-100' : 'bg-amber-100'
+            passed ? 'bg-green-100 dark:bg-green-900/30' : 'bg-amber-100 dark:bg-amber-900/30'
           )}
         >
           <Trophy

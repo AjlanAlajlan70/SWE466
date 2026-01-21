@@ -81,10 +81,10 @@ function ContentItemRenderer({
           variants={stepVariants}
           initial="hidden"
           animate="visible"
-          className="rounded-xl border-l-4 border-teal-500 bg-teal-50 p-4"
+          className="rounded-xl border-l-4 border-teal-500 bg-teal-50 dark:bg-teal-900/30 p-4"
         >
-          <p className="font-semibold text-teal-800">{item.term}</p>
-          <p className="mt-1 text-teal-700">{item.definition}</p>
+          <p className="font-semibold text-teal-800 dark:text-teal-300">{item.term}</p>
+          <p className="mt-1 text-teal-700 dark:text-teal-400">{item.definition}</p>
         </motion.div>
       );
 
@@ -94,10 +94,10 @@ function ContentItemRenderer({
           variants={stepVariants}
           initial="hidden"
           animate="visible"
-          className="flex items-start gap-3 rounded-xl bg-amber-50 p-4"
+          className="flex items-start gap-3 rounded-xl bg-amber-50 dark:bg-amber-900/30 p-4"
         >
           <span className="text-2xl">{item.icon || <Lightbulb className="h-6 w-6 text-amber-600" />}</span>
-          <p className="text-amber-800">
+          <p className="text-amber-800 dark:text-amber-300">
             <RenderText text={item.content} />
           </p>
         </motion.div>
@@ -109,10 +109,10 @@ function ContentItemRenderer({
           variants={stepVariants}
           initial="hidden"
           animate="visible"
-          className="flex items-start gap-3 rounded-xl bg-red-50 p-4"
+          className="flex items-start gap-3 rounded-xl bg-red-50 dark:bg-red-900/30 p-4"
         >
           <AlertTriangle className="h-5 w-5 flex-shrink-0 text-red-600" />
-          <p className="text-red-800">
+          <p className="text-red-800 dark:text-red-300">
             <RenderText text={item.content} />
           </p>
         </motion.div>

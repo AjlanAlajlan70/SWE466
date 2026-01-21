@@ -136,7 +136,7 @@ export function QuizContainer({ chapter }: QuizContainerProps) {
                   isActive
                     ? 'bg-coral-500 text-white'
                     : isComplete
-                    ? 'bg-green-100 text-green-700'
+                    ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400'
                     : 'bg-muted text-muted-foreground hover:bg-muted/80'
                 )}
               >
