@@ -1,10 +1,9 @@
-# # 📚 SPM Study Hub
+# 📚 SPM Study Hub
 
 An interactive study platform for **Software Project Management** courses. A personal initiative to help students study more effectively.
 
 Built with Next.js, Framer Motion, and TypeScript. Features beautiful animated slides, smart quizzes, and an AI study assistant.
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Next.js](https://img.shields.io/badge/Next.js-14-black)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)
 
@@ -468,12 +467,6 @@ vercel
 
 ---
 
-## 📜 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
 ## 🙏 Acknowledgments
 
 - Claude AI — For assistance in building this platform
@@ -487,8 +480,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📞 Contact
 
 - **Created by:** Ajlan Sulaiman Alajlan
-- **GitHub:** [@AjlanAlajlan70](https://github.com/AjlanAlajlan70
-)
+- **GitHub:** [@AjlanAlajlan70](https://github.com/AjlanAlajlan70)
 
 ---
 
